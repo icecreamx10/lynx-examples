@@ -30,10 +30,7 @@ export function App() {
     <page
       className="Page"
       bindmousemove={handleMove}
-      bindtouchmove={handleMove}
       bindmouseup={finishDrag}
-      bindtouchend={finishDrag}
-      bindtouchcancel={cancelDrag}
       bindmouseleave={cancelDrag}
     >
       <view className="PageBackdrop">
@@ -56,9 +53,9 @@ export function App() {
             className={logoCardClassName}
             style={logoCardStyle}
             bindmousedown={handleLogoDown}
-            bindtouchstart={handleLogoDown}
+            draggable={false}
           >
-            <image src={lynxLogo} className="LogoImage" />
+            <image src={lynxLogo} className="LogoImage" draggable={false} />
           </view>
         </view>
       </view>
